@@ -1,8 +1,4 @@
-const { getSettings } = require("../Database/config");
-
-const formatStylishReply = (message) => {
-    return `◈━━━━━━━━━━━━━━━━◈\n│❒ ${message}\n◈━━━━━━━━━━━━━━━━◈`;
-};
+const { getSettings } = require("../Database/config"); 
 
 module.exports = async (client, m) => {
     try {
@@ -23,22 +19,23 @@ module.exports = async (client, m) => {
         const isAdmin = m.isAdmin;
         const isBotAdmin = m.isBotAdmin;
 
+        // ADMIN NOTICE
         if (isAdmin) {
             await client.sendMessage(m.chat, {
-                text: formatStylishReply(`Admin Status Mention Detected\nUser: @${m.sender.split("@")[0]}\nAdmins get a free pass for status mentions\nBut seriously, keep it minimal! 😒`),
+                text: `╔══❰ *DML-MD | NOTICE* ❱══
+║ 👤 User: @${m.sender.split("@")[0]}
+║ 🛡️ Role: Group Admin
+║ ✅ Status mentions allowed
+║ 📘 Admin privileges confirmed
+╚══════════════════════╝`,
                 mentions: [m.sender],
             });
             return;
         }
 
-        if (!isBotAdmin) {
-            await client.sendMessage(m.chat, {
-                text: formatStylishReply(`Can't Delete Status Mention! 😤\nUser: @${m.sender.split("@")[0]} just dropped a status mention\nBut I'm not admin here! How embarrassing...\nAdmins: Make me admin so I can delete this nonsense!`),
-                mentions: [m.sender],
-            });
-            return;
-        }
+        if (!isBotAdmin) return;
 
+        // DELETE MESSAGE
         await client.sendMessage(m.chat, {
             delete: {
                 remoteJid: m.chat,
@@ -48,24 +45,39 @@ module.exports = async (client, m) => {
             },
         });
 
+        // DELETE MODE NOTICE
         if (mode === "delete" || mode === "true") {
             await client.sendMessage(m.chat, {
-                text: formatStylishReply(`Status Mention Deleted! 🗑️\nUser: @${m.sender.split("@")[0]} thought they could spam\nStatus mentions are NOT allowed here!\nNext violation = Immediate removal! ⚠️`),
+                text: `╔══❰ *DML-MD | Anti Status Mention* ❱══
+║ 👤 User: @${m.sender.split("@")[0]}
+║ ⚠️ Policy Violation detected
+║ 🧹 Message deleted by system
+║ 🚨 Warning: Repeated action may lead to removal
+╚══════════════════════╝`,
                 mentions: [m.sender],
             });
         }
 
+        // REMOVE MODE NOTICE
         if (mode === "remove") {
             try {
                 await client.groupParticipantsUpdate(m.chat, [m.sender], "remove");
                 await client.sendMessage(m.chat, {
-                    text: formatStylishReply(`User Removed for Status Mention! 🚫\n@${m.sender.split("@")[0]} ignored the warnings\nNo status mentions allowed in this group!\nLearn the rules or stay out! 😤`),
+                    text: `╔══❰ *DML-MD | NOTICE* ❱══
+║ 👤 User: @${m.sender.split("@")[0]}
+║ 🔗 Policy Violation: Status mention
+║ 🚪 Action: User removed from group
+║ 📘 Please review group rules
+╚══════════════════════╝`,
                     mentions: [m.sender],
                 });
             } catch {
                 await client.sendMessage(m.chat, {
-                    text: formatStylishReply(`Failed to Remove User! 😠\nTried to kick @${m.sender.split("@")[0]} for status mention\nBut I don't have enough permissions!\nAdmins: Fix my permissions and promote me or deal with spammers yourself!`),
-                    mentions: [m.sender],
+                    text: `╔══❰ *DML-MD | ERROR* ❱══
+║ ❌ Action failed
+║ 🔐 Bot lacks admin permissions
+║ ⚙️ Please check bot role
+╚══════════════════════╝`,
                 });
             }
         }
