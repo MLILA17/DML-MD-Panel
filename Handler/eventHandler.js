@@ -28,15 +28,17 @@ const Events = async (client, event, pict) => {
                 try {
                     const userName = participant.split("@")[0];
                     const welcomeText = 
-`╭───「 💉 DML-MD 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 💉 」
-│ 😈 *Yo, @${userName}, welcome to the chaos!*  
-│
-│ 🤖 *Bot*: DML-MD 𝐕3
-│ 🦁 *Group*: ${metadata.subject}
-│ 📜 *Desc*: ${desc}
-│
-│ 😼 *Try not to get roasted too hard, newbie!*
-╰───「 🔥 Powered by DML-MD  🔥 」`;
+`╔══『 🎉 𝐖𝐄𝐋𝐂𝐎𝐌𝐄 』══╗
+║ 👋 Hello @${userName}
+║
+║ Welcome to *${metadata.subject}*
+║
+║ 📜 Description:
+║ ${desc}
+║
+║ 🤖 Bot: *DML-MD*
+║ ⚡ Enjoy your stay & follow the rules.
+╚═══════════════════╝`;
 
                     await client.sendMessage(event.id, {
                         image: { url: dpUrl },
@@ -50,14 +52,14 @@ const Events = async (client, event, pict) => {
                 try {
                     const userName = participant.split("@")[0];
                     const leaveText = 
-`╭───「 🚪 DML-MD 𝐄𝐱𝐢𝐭 🚪 」
-│ 😎 *Later, @${userName}! Couldn’t handle the heat?*  
-│
-│ 🤖 *Bot*: DML-MD
-│ 🦁 *Group*: ${metadata.subject}
-│
-│ 😜 *Don’t cry, we’ll survive without ya!*
-╰───「 🔥 Powered by DML-MD 🔥 」`;
+`╔══『 🚪 𝐆𝐎𝐎𝐃𝐁𝐘𝐄 』══╗
+║ 👋 Goodbye @${userName}
+║
+║ You have left *${metadata.subject}*
+║
+║ 🤖 Bot: *DML-MD*
+║ ⚡ We wish you the best.
+╚══════════════════╝`;
 
                     await client.sendMessage(event.id, {
                         image: { url: dpUrl },
@@ -79,12 +81,12 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔽 DML-MD 𝐃𝐞𝐦𝐨𝐭𝐢𝐨𝐧 🔽 」
-│ 😤 *Big shot @${participant.split("@")[0]} got knocked down!*  
-│
-│ 🤖 *Bot*: DML-MD 𝐕3
-│ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by DML-MD 🔥 」`,
+`╔═『 🔽 𝐃𝐄𝐌𝐎𝐓𝐄𝐃 』═╗
+║ @${participant.split("@")[0]} has been demoted.
+║
+║ 🏷 Group: ${metadata.subject}
+║ 🤖 Bot: DML-MD
+╚════════════════════`,
                             mentions: [participant]
                         });
                         return;
@@ -95,13 +97,17 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔽 DML-MD 𝐀𝐧𝐭𝐢𝐝𝐞𝐦𝐨𝐭𝐞 🔽 」
-│ 😏 *Nice try, @${event.author.split("@")[0]}! Demoted for messing with @${participant.split("@")[0]}!*  
-│
-│ 🤖 *Bot*: DML-MD
-│ 🦁 *Group*: ${metadata.subject}
-│ 📜 *Rule*: Antidemote’s on, loser. Only the big dogs can demote!
-╰───「 🔥 Powered by DML-MD 🔥 」`,
+`╔══『 🛡️ 𝐀𝐍𝐓𝐈-𝐃𝐄𝐌𝐎𝐓𝐄 』══╗
+║ ⚠️ Action blocked!
+║
+║ 👤 @${event.author.split("@")[0]}
+║ attempted to demote
+║ 👤 @${participant.split("@")[0]}
+║
+║ 🔁 Reversing changes...
+║
+║ Only Owner / Sudo can demote admins.
+╚═══════════════════╝`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -117,12 +123,12 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔼 DML-MD 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧 🔼 」
-│ 😎 *Big dog @${participant.split("@")[0]} just leveled up!*  
-│
-│ 🤖 *Bot*: DML-MD
-│ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by DML-MD 🔥 」`,
+`╔══『 🔼 𝐏𝐑𝐎𝐌𝐎𝐓𝐄𝐃 』══╗
+║ 🎉 @${participant.split("@")[0]} is now an admin!
+║
+║ 🏷 Group: ${metadata.subject}
+║ 🤖 Bot: DML-MD 
+╚════════════════════╝`,
                             mentions: [participant]
                         });
                         return;
@@ -132,13 +138,17 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔼 DML-MD 𝐀𝐧𝐭𝐢𝐩𝐫𝐨𝐦𝐨𝐭𝐞 🔼 」
-│ 😆 *Oof, @${event.author.split("@")[0]}! Demoted for trying to boost @${participant.split("@")[0]}!*  
-│
-│ 🤖 *Bot*: DML-MD
-│ 🦁 *Group*: ${metadata.subject}
-│ 📜 *Rule*: @${participant.split("@")[0]} got yeeted too. Antipromote’s on, only the elite can promote!
-╰───「 🔥 Powered by DML-MD 🔥 」`,
+`╔═『 🛡️ 𝐀𝐍𝐓𝐈-𝐏𝐑𝐎𝐌𝐎𝐓𝐄 』═╗
+║ ⚠️ Unauthorized promotion detected!
+║
+║ 👤 @${event.author.split("@")[0]}
+║ tried promoting
+║ 👤 @${participant.split("@")[0]}
+║
+║ 🔁 Action reverted.
+║
+║ Only Owner / Sudo can promote admins.
+╚════════════════════╝`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -150,12 +160,13 @@ const Events = async (client, event, pict) => {
         try {
             await client.sendMessage(event.id, {
                 text: 
-`╭───「 ⚠️ DML-MD 𝐄𝐫𝐫𝐨𝐫 ⚠️ 」
-│ 😬 *Yikes, something broke. Blame the group vibes!*  
-│
-│ 🤖 *Bot*: DML-MD 
-│ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by DML-MD 🔥 」`
+`╔══『 ⚠️ SYSTEM ERROR 』══╗
+║ Something went wrong while
+║ processing the group event.
+║
+║ 🤖 Bot: DML-MD 
+║ Please try again later.
+╚════════════════════╝`
             });
         } catch {
             // If this fails, we’re just cursed
