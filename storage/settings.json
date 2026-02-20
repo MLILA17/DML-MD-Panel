@@ -1,0 +1,17 @@
+{
+  "prefix": ".",
+  "packname": "DML-MD",
+  "mode": "private",
+  "presence": "online",
+  "autoview": "true",
+  "autolike": "false",
+  "autoread": "false",
+  "autobio": "false",
+  "anticall": "false",
+  "chatbotpm": "false",
+  "autolikeemoji": "❤️",
+  "antilink": "off",
+  "antidelete": "false",
+  "antistatusmention": "delete",
+  "startmessage": "true"
+}
