@@ -463,12 +463,18 @@ async function startDml() {
     return trueFileName;
   };
 
-  console.log(`🚀 DML-MD started successfully!`);
-  console.log(`📊 Current settings:`);
-  console.log(`   • Autolike: ${settingss.autolike ? '✅ ON' : '❌ OFF'}`);
-  console.log(`   • Autoview: ${settingss.autoview ? '✅ ON' : '❌ OFF'}`);
-  console.log(`   • Autoread: ${settingss.autoread ? '✅ ON' : '❌ OFF'}`);
-  console.log(`   • Reaction Emoji: ${settingss.autolikeemoji || 'random'}`);
+  console.log(`
+╔══════════════════════════════════╗
+║        🚀 DML-MD SYSTEM ONLINE    ║
+╠══════════════════════════════════╣
+║ 📊 Current Configuration         
+║                                  
+║  ▸ Autolike        : ${settingss.autolike ? '✅ ENABLED ' : '❌ DISABLED'}
+║  ▸ Autoview        : ${settingss.autoview ? '✅ ENABLED ' : '❌ DISABLED'}
+║  ▸ Autoread        : ${settingss.autoread ? '✅ ENABLED ' : '❌ DISABLED'}
+║  ▸ Reaction Emoji  : ${settingss.autolikeemoji || '🎲 Random'}
+╚══════════════════════════════════╝
+`);
 }
 
 app.use(express.static('public'));
