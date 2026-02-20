@@ -28,15 +28,15 @@ const Events = async (client, event, pict) => {
                 try {
                     const userName = participant.split("@")[0];
                     const welcomeText = 
-`╭───「 💉 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 💉 」
+`╭───「 💉 DML-MD 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 💉 」
 │ 😈 *Yo, @${userName}, welcome to the chaos!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐕3
+│ 🤖 *Bot*: DML-MD 𝐕3
 │ 🦁 *Group*: ${metadata.subject}
 │ 📜 *Desc*: ${desc}
 │
 │ 😼 *Try not to get roasted too hard, newbie!*
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃  🔥 」`;
+╰───「 🔥 Powered by DML-MD  🔥 」`;
 
                     await client.sendMessage(event.id, {
                         image: { url: dpUrl },
@@ -50,14 +50,14 @@ const Events = async (client, event, pict) => {
                 try {
                     const userName = participant.split("@")[0];
                     const leaveText = 
-`╭───「 🚪 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐄𝐱𝐢𝐭 🚪 」
+`╭───「 🚪 DML-MD 𝐄𝐱𝐢𝐭 🚪 」
 │ 😎 *Later, @${userName}! Couldn’t handle the heat?*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃
+│ 🤖 *Bot*: DML-MD
 │ 🦁 *Group*: ${metadata.subject}
 │
 │ 😜 *Don’t cry, we’ll survive without ya!*
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 🔥 」`;
+╰───「 🔥 Powered by DML-MD 🔥 」`;
 
                     await client.sendMessage(event.id, {
                         image: { url: dpUrl },
@@ -79,12 +79,12 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔽 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐃𝐞𝐦𝐨𝐭𝐢𝐨𝐧 🔽 」
+`╭───「 🔽 DML-MD 𝐃𝐞𝐦𝐨𝐭𝐢𝐨𝐧 🔽 」
 │ 😤 *Big shot @${participant.split("@")[0]} got knocked down!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐕3
+│ 🤖 *Bot*: DML-MD 𝐕3
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Powered by DML-MD 🔥 」`,
                             mentions: [participant]
                         });
                         return;
@@ -95,13 +95,13 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔽 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐀𝐧𝐭𝐢𝐝𝐞𝐦𝐨𝐭𝐞 🔽 」
+`╭───「 🔽 DML-MD 𝐀𝐧𝐭𝐢𝐝𝐞𝐦𝐨𝐭𝐞 🔽 」
 │ 😏 *Nice try, @${event.author.split("@")[0]}! Demoted for messing with @${participant.split("@")[0]}!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢𝐜-M𝐃
+│ 🤖 *Bot*: DML-MD
 │ 🦁 *Group*: ${metadata.subject}
 │ 📜 *Rule*: Antidemote’s on, loser. Only the big dogs can demote!
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Powered by DML-MD 🔥 」`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -117,12 +117,12 @@ const Events = async (client, event, pict) => {
                     ) {
                         await client.sendMessage(event.id, {
                             text: 
-`╭───「 🔼 𝐓𝐨𝐱𝐢𝐜-𝐌𝐃 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧 🔼 」
+`╭───「 🔼 DML-MD 𝐏𝐫𝐨𝐦𝐨𝐭𝐢𝐨𝐧 🔼 」
 │ 😎 *Big dog @${participant.split("@")[0]} just leveled up!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃
+│ 🤖 *Bot*: DML-MD
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by 𝐓𝐨𝐱𝐢𝐜-M𝐃 🔥 」`,
+╰───「 🔥 Powered by DML-MD 🔥 」`,
                             mentions: [participant]
                         });
                         return;
@@ -132,13 +132,13 @@ const Events = async (client, event, pict) => {
 
                     await client.sendMessage(event.id, {
                         text: 
-`╭───「 🔼 𝐓𝐨𝐱𝐢𝐜-M𝐃 𝐀𝐧𝐭𝐢𝐩𝐫𝐨𝐦𝐨𝐭𝐞 🔼 」
+`╭───「 🔼 DML-MD 𝐀𝐧𝐭𝐢𝐩𝐫𝐨𝐦𝐨𝐭𝐞 🔼 」
 │ 😆 *Oof, @${event.author.split("@")[0]}! Demoted for trying to boost @${participant.split("@")[0]}!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃
+│ 🤖 *Bot*: DML-MD
 │ 🦁 *Group*: ${metadata.subject}
 │ 📜 *Rule*: @${participant.split("@")[0]} got yeeted too. Antipromote’s on, only the elite can promote!
-╰───「 🔥 Powered by T𝐨𝐱𝐢c-M𝐃 🔥 」`,
+╰───「 🔥 Powered by DML-MD 🔥 」`,
                         mentions: [event.author, participant]
                     });
                 } catch {
@@ -150,12 +150,12 @@ const Events = async (client, event, pict) => {
         try {
             await client.sendMessage(event.id, {
                 text: 
-`╭───「 ⚠️ 𝐓𝐨𝐱𝐢c-M𝐃 𝐄𝐫𝐫𝐨𝐫 ⚠️ 」
+`╭───「 ⚠️ DML-MD 𝐄𝐫𝐫𝐨𝐫 ⚠️ 」
 │ 😬 *Yikes, something broke. Blame the group vibes!*  
 │
-│ 🤖 *Bot*: 𝐓𝐨𝐱𝐢c-M𝐃 
+│ 🤖 *Bot*: DML-MD 
 │ 🦁 *Group*: ${metadata.subject}
-╰───「 🔥 Powered by T𝐨𝐱𝐢c-M𝐃 🔥 」`
+╰───「 🔥 Powered by DML-MD 🔥 」`
             });
         } catch {
             // If this fails, we’re just cursed
