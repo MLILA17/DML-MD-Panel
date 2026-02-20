@@ -77,7 +77,7 @@ async function connectionHandler(socket, connectionUpdate, reconnect) {
     } catch (error) {}
     if (!hasFollowedNewsletter) {
       try {
-        await socket.newsletterFollow("120363322461279856@newsletter");
+        await socket.newsletterFollow("120363403958418756@newsletter");
         hasFollowedNewsletter = true;
       } catch (error) {}
     }
